@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>卷帘 — 欢迎 | RollShades</title>
+  <meta name="description" content="卷帘产品 — 高质量窗帘卷帘，简约设计与智能控制。/ Premium roll shades — minimalist design, smart control.">
+  <style>
+    :root{
+      --bg:#f5f6f7;
+      --card:#ffffff;
+      --accent:#0071e3;
+      --muted:#6b6b6b;
+      --radius:16px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: light;
+    }
+    html,body{height:100%;}
+    body{margin:0;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:48px}
+    .container{max-width:1100px;width:100%;}
+    .hero{background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.9));border-radius:var(--radius);box-shadow:0 8px 30px rgba(25,25,30,0.08);padding:56px;display:flex;gap:40px;align-items:center}
+    .hero-left{flex:1}
+    .brand{font-size:13px;color:var(--muted);letter-spacing:1px}
+    .title{font-size:44px;margin:8px 0 12px}
+    .subtitle{font-size:18px;color:var(--muted);max-width:48rem;line-height:1.5}
+    .cta{margin-top:24px}
+    .btn{background:var(--accent);color:white;border:0;padding:14px 20px;border-radius:12px;font-weight:600;cursor:pointer;margin-right:12px}
+    .btn-ghost{background:transparent;border:1px solid rgba(0,0,0,0.08);color:var(--muted)}
+    .lang-switch{margin-left:auto;display:flex;gap:8px}
+    .lang-switch button{background:transparent;border:0;padding:8px 10px;border-radius:8px;cursor:pointer}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 4px 18px rgba(25,25,30,0.04)}
+    .hero-right{width:420px;display:flex;flex-direction:column;gap:16px}
+    .mock{height:260px;background:linear-gradient(135deg,#eef6ff,#ffffff);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600}
+    footer{margin-top:20px;color:var(--muted);font-size:13px;text-align:center}
+    @media (max-width:900px){.hero{flex-direction:column}.hero-right{width:100%}.title{font-size:32px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px">
+      <div style="font-weight:700;font-size:18px">卷帘 / RollShades</div>
+      <div class="lang-switch">
+        <button id="btn-zh">中文</button>
+        <button id="btn-en">EN</button>
+      </div>
+    </div>
+
+    <main class="hero" role="main">
+      <div class="hero-left">
+        <div class="brand" id="brand">品质 · 设计 · 智能</div>
+        <h1 class="title" id="title">给窗户一个优雅的答复</h1>
+        <p class="subtitle" id="subtitle">卷帘 — 专注于家居与办公的窗饰定制，结合简约外观与智能控制，让光线与私密随心切换。</p>
+
+        <div class="cta">
+          <button class="btn" id="primary-cta">立即咨询</button>
+          <button class="btn-ghost" id="secondary-cta">了解更多</button>
+        </div>
+
+        <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
+          <div class="card" style="display:inline-flex;gap:10px;align-items:center">
+            <div style="width:12px;height:12px;border-radius:3px;background:var(--accent)"></div>
+            <div style="font-size:14px" id="feature">电动/手动两用 · 支持定制尺寸</div>
+          </div>
+          <div class="card" style="display:inline-flex;gap:10px;align-items:center">
+            <div style="width:12px;height:12px;border-radius:3px;background:#34c759"></div>
+            <div style="font-size:14px" id="quality">高密度面料 · 阻光/隔热可选</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="mock">产品预览占位图</div>
+        <div class="card">
+          <strong id="spec-title">技术规格</strong>
+          <div id="specs" style="margin-top:8px;color:var(--muted);font-size:14px">宽度可定制 · 电机噪音低于38dB</div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div id="foot">© 2026 卷帘 RollShades. All rights reserved.</div>
+    </footer>
+  </div>
+
+  <script>
+    const texts = {
+      zh: {
+        brand: '品质 · 设计 · 智能',
+        title: '给窗户一个优雅的答复',
+        subtitle: '卷帘 — 专注于家居与办公的窗饰定制，结合简约外观与智能控制，让光线与私密随心切换。',
+        primary: '立即咨询',
+        secondary: '了解更多',
+        feature: '电动/手动两用 · 支持定制尺寸',
+        quality: '高密度面料 · 阻光/隔热可选',
+        specTitle: '技术规格',
+        specs: '宽度可定制 · 电机噪音低于38dB',
+        foot: '© 2026 卷帘 RollShades。保留所有权利。'
+      },
+      en: {
+        brand: 'Quality · Design · Smart',
+        title: 'A graceful answer for your windows',
+        subtitle: 'RollShades — Custom roll shades for home and office, pairing minimalist aesthetics with smart control so light and privacy are yours to tune.',
+        primary: 'Contact Sales',
+        secondary: 'Learn More',
+        feature: 'Motorized / Manual · Custom widths available',
+        quality: 'High-density fabrics · Blackout & thermal options',
+        specTitle: 'Specifications',
+        specs: 'Custom widths · Motor noise < 38dB',
+        foot: '© 2026 RollShades. All rights reserved.'
+      }
+    };
+
+    function setLang(lang){
+      const t = texts[lang];
+      document.getElementById('brand').textContent = t.brand;
+      document.getElementById('title').textContent = t.title;
+      document.getElementById('subtitle').textContent = t.subtitle;
+      document.getElementById('primary-cta').textContent = t.primary;
+      document.getElementById('secondary-cta').textContent = t.secondary;
+      document.getElementById('feature').textContent = t.feature;
+      document.getElementById('quality').textContent = t.quality;
+      document.getElementById('spec-title').textContent = t.specTitle;
+      document.getElementById('specs').textContent = t.specs;
+      document.getElementById('foot').textContent = t.foot;
+      // set html lang
+      document.documentElement.lang = (lang === 'zh' ? 'zh-CN' : 'en');
+      localStorage.setItem('site-lang', lang);
+    }
+
+    document.getElementById('btn-zh').addEventListener('click', ()=>setLang('zh'));
+    document.getElementById('btn-en').addEventListener('click', ()=>setLang('en'));
+
+    // initialize from storage or prefer browser language
+    const initial = localStorage.getItem('site-lang') || (navigator.language && navigator.language.startsWith('zh') ? 'zh' : 'en');
+    setLang(initial);
+
+    // CTA handlers (just helpful placeholders)
+    document.getElementById('primary-cta').addEventListener('click', ()=>{
+      alert((document.documentElement.lang === 'zh-CN') ? '感谢您的咨询！我们会尽快与您联系。' : 'Thanks for your inquiry! We will contact you shortly.');
+    });
+    document.getElementById('secondary-cta').addEventListener('click', ()=>{
+      const url = window.location.href + '#more';
+      window.location.href = url;
+    });
+  </script>
+</body>
+</html>
