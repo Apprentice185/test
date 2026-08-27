@@ -1,147 +1,1110 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>卷帘 — 欢迎 | RollShades</title>
-  <meta name="description" content="卷帘产品 — 高质量窗帘卷帘，简约设计与智能控制。/ Premium roll shades — minimalist design, smart control.">
-  <style>
-    :root{
-      --bg:#f5f6f7;
-      --card:#ffffff;
-      --accent:#0071e3;
-      --muted:#6b6b6b;
-      --radius:16px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color-scheme: light;
-    }
-    html,body{height:100%;}
-    body{margin:0;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:48px}
-    .container{max-width:1100px;width:100%;}
-    .hero{background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.9));border-radius:var(--radius);box-shadow:0 8px 30px rgba(25,25,30,0.08);padding:56px;display:flex;gap:40px;align-items:center}
-    .hero-left{flex:1}
-    .brand{font-size:13px;color:var(--muted);letter-spacing:1px}
-    .title{font-size:44px;margin:8px 0 12px}
-    .subtitle{font-size:18px;color:var(--muted);max-width:48rem;line-height:1.5}
-    .cta{margin-top:24px}
-    .btn{background:var(--accent);color:white;border:0;padding:14px 20px;border-radius:12px;font-weight:600;cursor:pointer;margin-right:12px}
-    .btn-ghost{background:transparent;border:1px solid rgba(0,0,0,0.08);color:var(--muted)}
-    .lang-switch{margin-left:auto;display:flex;gap:8px}
-    .lang-switch button{background:transparent;border:0;padding:8px 10px;border-radius:8px;cursor:pointer}
-    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 4px 18px rgba(25,25,30,0.04)}
-    .hero-right{width:420px;display:flex;flex-direction:column;gap:16px}
-    .mock{height:260px;background:linear-gradient(135deg,#eef6ff,#ffffff);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600}
-    footer{margin-top:20px;color:var(--muted);font-size:13px;text-align:center}
-    @media (max-width:900px){.hero{flex-direction:column}.hero-right{width:100%}.title{font-size:32px}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>岩溪广告 | 极速数码写真与广告工程中心</title>
+    <style>
+        :root {
+            --bg-dark: #000000;
+            --bg-card: #161617;
+            --bg-card-hover: #1c1c1e;
+            --text-primary: #f5f5f7;
+            --text-secondary: #86868b;
+            --apple-blue: #2997ff;
+            --apple-blue-hover: #0077ed;
+            --accent-green: #30d158;
+            --border-dark: #2c2c2e;
+            --border-light: #3a3a3c;
+            --radius-lg: 20px;
+            --radius-md: 12px;
+            --font-stack: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-stack);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* 顶部半透明毛玻璃导航 */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 52px;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-logo span {
+            background: #ffffff;
+            color: #000;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            font-size: 13px;
+        }
+
+        .nav-menu a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover {
+            color: #ffffff;
+        }
+
+        .nav-contact-btn {
+            background: var(--apple-blue);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 980px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-contact-btn:hover {
+            background: var(--apple-blue-hover);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 80px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .hero-tag {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ff9f0a;
+            margin-bottom: 12px;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-title {
+            font-size: 64px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.06;
+            background: linear-gradient(180deg, #ffffff 30%, #8e8e93 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 18px;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            color: var(--text-secondary);
+            max-width: 720px;
+            margin: 0 auto 36px auto;
+            font-weight: 400;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--apple-blue);
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 12px 26px;
+            border-radius: 980px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--apple-blue-hover);
+            transform: scale(1.02);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 15px;
+            padding: 12px 26px;
+            border-radius: 980px;
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        /* 通用容器 */
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .section-header {
+            margin-bottom: 44px;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 17px;
+        }
+
+        /* Bento Grid 视觉流 */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+        }
+
+        .bento-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-dark);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s;
+        }
+
+        .bento-card:hover {
+            border-color: var(--border-light);
+            transform: translateY(-3px);
+        }
+
+        .col-7 { grid-column: span 7; }
+        .col-5 { grid-column: span 5; }
+        .col-4 { grid-column: span 4; }
+        .col-8 { grid-column: span 8; }
+        .col-12 { grid-column: span 12; }
+
+        .card-img-wrap {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .bento-card:hover .card-img-wrap img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 28px;
+        }
+
+        .card-tag {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--apple-blue);
+            letter-spacing: 0.08em;
+            margin-bottom: 6px;
+        }
+
+        .card-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* 工作台计算器与提交表单 */
+        .workbench {
+            background: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+        }
+
+        .tab-nav {
+            display: flex;
+            background: #0a0a0b;
+            padding: 5px;
+            border-radius: 12px;
+            gap: 6px;
+            margin-bottom: 30px;
+            border: 1px solid #222;
+            width: fit-content;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: transparent;
+            color: var(--text-secondary);
+            border: none;
+            padding: 9px 20px;
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            background: #2c2c2e;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .field-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .apple-control {
+            background: #0d0d0e;
+            border: 1px solid var(--border-dark);
+            border-radius: 10px;
+            padding: 12px 14px;
+            font-size: 14px;
+            color: #ffffff;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .apple-control:focus {
+            border-color: var(--apple-blue);
+            background: #141416;
+        }
+
+        /* 拖拽上传文件区 */
+        .upload-dropzone {
+            border: 2px dashed var(--border-dark);
+            border-radius: var(--radius-md);
+            padding: 30px 20px;
+            text-align: center;
+            background: #0c0c0d;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .upload-dropzone:hover, .upload-dropzone.dragover {
+            border-color: var(--apple-blue);
+            background: rgba(41, 151, 255, 0.04);
+        }
+
+        .upload-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+            color: var(--apple-blue);
+        }
+
+        .upload-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .upload-hint {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        #file-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .file-selected-badge {
+            display: none;
+            margin-top: 12px;
+            background: #1e3a24;
+            color: #4cd964;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* 订单与联系人信息 */
+        .contact-inputs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        /* 结算浮层 */
+        .checkout-box {
+            background: linear-gradient(180deg, rgba(41, 151, 255, 0.08) 0%, rgba(0,0,0,0) 100%);
+            border: 1px solid rgba(41, 151, 255, 0.25);
+            border-radius: var(--radius-md);
+            padding: 24px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .checkout-price .desc {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .checkout-price .total {
+            font-size: 36px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .checkout-price .total span {
+            font-size: 16px;
+            color: var(--apple-blue);
+            font-weight: 400;
+            margin-left: 4px;
+        }
+
+        /* 悬浮客服面板 / 联系方式卡片 */
+        .contact-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+        }
+
+        .contact-card:hover {
+            border-color: var(--border-light);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .contact-title {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .contact-val {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+            word-break: break-all;
+        }
+
+        .copy-pill {
+            background: #2c2c2e;
+            color: #d1d1d6;
+            padding: 4px 12px;
+            border-radius: 980px;
+            font-size: 11px;
+            cursor: pointer;
+            border: none;
+            transition: 0.2s;
+        }
+
+        .copy-pill:hover {
+            background: var(--apple-blue);
+            color: #fff;
+        }
+
+        /* 表格样式 */
+        .table-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            border-radius: var(--radius-lg);
+            overflow-x: auto;
+        }
+
+        .modern-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            text-align: left;
+        }
+
+        .modern-table th {
+            background: #1c1c1e;
+            padding: 16px 20px;
+            color: #ffffff;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .modern-table td {
+            padding: 14px 20px;
+            border-bottom: 1px solid var(--border-dark);
+            color: #a1a1a6;
+        }
+
+        .modern-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .modern-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+            color: #ffffff;
+        }
+
+        /* 页脚 */
+        footer {
+            border-top: 1px solid var(--border-dark);
+            padding: 50px 24px 40px 24px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 80px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        @media (max-width: 860px) {
+            .hero-title { font-size: 40px; }
+            .col-7, .col-5, .col-4, .col-8 { grid-column: span 12; }
+            .form-grid, .contact-inputs, .contact-cards-grid { grid-template-columns: 1fr; }
+            .nav-menu { display: none; }
+            .checkout-box { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px">
-      <div style="font-weight:700;font-size:18px">卷帘 / RollShades</div>
-      <div class="lang-switch">
-        <button id="btn-zh">中文</button>
-        <button id="btn-en">EN</button>
-      </div>
-    </div>
 
-    <main class="hero" role="main">
-      <div class="hero-left">
-        <div class="brand" id="brand">品质 · 设计 · 智能</div>
-        <h1 class="title" id="title">给窗户一个优雅的答复</h1>
-        <p class="subtitle" id="subtitle">卷帘 — 专注于家居与办公的窗饰定制，结合简约外观与智能控制，让光线与私密随心切换。</p>
+    <!-- 顶部半透明毛玻璃导航 -->
+    <header>
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                岩溪广告 <span>PRO FACTORY</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#materials">材质画廊</a></li>
+                <li><a href="#workbench">在线下单与发信</a></li>
+                <li><a href="#quote-table">最新报价矩阵</a></li>
+                <li><a href="#contacts">联系方式</a></li>
+            </ul>
+            <a href="#contacts" class="nav-contact-btn">联系我们</a>
+        </div>
+    </header>
 
-        <div class="cta">
-          <button class="btn" id="primary-cta">立即咨询</button>
-          <button class="btn-ghost" id="secondary-cta">了解更多</button>
+    <!-- 主视觉 Hero -->
+    <section class="hero">
+        <div class="hero-tag">2026 最新官方报价与履约标准</div>
+        <h1 class="hero-title">高精数码写真。<br>毫厘精工，同城速达。</h1>
+        <p class="hero-subtitle">从高密度 KT 展板、3M 超耐候车贴到微发泡雪弗板。支持在线实时配置、文件直传推送到厂，次日送达上门。</p>
+        <div class="hero-actions">
+            <a href="#workbench" class="btn-primary">开始传图与算价</a>
+            <a href="#contacts" class="btn-secondary">添加微信咨询 ›</a>
+        </div>
+    </section>
+
+    <!-- Bento Grid 材质图文画廊 (真实高清图库) -->
+    <section class="section-container" id="materials">
+        <div class="section-header">
+            <h2>工业级工艺矩阵。</h2>
+            <p>真实选材实拍，耐候防晒，色彩纤毫毕现。</p>
         </div>
 
-        <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
-          <div class="card" style="display:inline-flex;gap:10px;align-items:center">
-            <div style="width:12px;height:12px;border-radius:3px;background:var(--accent)"></div>
-            <div style="font-size:14px" id="feature">电动/手动两用 · 支持定制尺寸</div>
-          </div>
-          <div class="card" style="display:inline-flex;gap:10px;align-items:center">
-            <div style="width:12px;height:12px;border-radius:3px;background:#34c759"></div>
-            <div style="font-size:14px" id="quality">高密度面料 · 阻光/隔热可选</div>
-          </div>
-        </div>
-      </div>
+        <div class="bento-grid">
+            <!-- 1. 板材写真 (Col 7) -->
+            <div class="bento-card col-7">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1200&auto=format&fit=crop" alt="KT板与展板">
+                </div>
+                <div class="card-content">
+                    <div class="card-tag">Rigid Substrates</div>
+                    <div class="card-title">KT 板 / 微发泡雪弗板写真</div>
+                    <div class="card-desc">60×90cm 高密板材与 3/5/9mm 硬质雪弗板。数控异形雕刻裁切（每平米+10~20元），切边挺括光滑，无毛刺起泡。</div>
+                </div>
+            </div>
 
-      <div class="hero-right">
-        <div class="mock">产品预览占位图</div>
-        <div class="card">
-          <strong id="spec-title">技术规格</strong>
-          <div id="specs" style="margin-top:8px;color:var(--muted);font-size:14px">宽度可定制 · 电机噪音低于38dB</div>
-        </div>
-      </div>
-    </main>
+            <!-- 2. 便携展架 (Col 5) -->
+            <div class="bento-card col-5">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop" alt="展架系统">
+                </div>
+                <div class="card-content">
+                    <div class="card-tag">Portable Display</div>
+                    <div class="card-title">易拉宝与抗风门型展架</div>
+                    <div class="card-desc">塑钢/铝合金出口型易拉宝，配合加重铁门型与 4kg 注水底座，室内外活动布展利器。</div>
+                </div>
+            </div>
 
+            <!-- 3. 户外车贴与膜材 (Col 4) -->
+            <div class="bento-card col-4">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop" alt="车贴写真">
+                </div>
+                <div class="card-content">
+                    <div class="card-tag">Outdoor Materials</div>
+                    <div class="card-title">3M 车贴 / 地板膜</div>
+                    <div class="card-desc">黑白胶车贴、磨砂/单透贴与斜纹耐磨地板膜，防水防紫外线。</div>
+                </div>
+            </div>
+
+            <!-- 4. 户内高清写真 (Col 4) -->
+            <div class="bento-card col-4">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=800&auto=format&fit=crop" alt="高清相纸">
+                </div>
+                <div class="card-content">
+                    <div class="card-tag">Fine Art Micro-Jet</div>
+                    <div class="card-title">250g 高光相纸 / 灯箱片</div>
+                    <div class="card-desc">120g 背胶、160g PP 纸与背喷灯片，画质通透细腻。</div>
+                </div>
+            </div>
+
+            <!-- 5. 商务名片印刷 (Col 4) -->
+            <div class="bento-card col-4">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=800&auto=format&fit=crop" alt="名片特种纸">
+                </div>
+                <div class="card-content">
+                    <div class="card-tag">Business Cards</div>
+                    <div class="card-title">铜版纸 / 特种纸名片</div>
+                    <div class="card-desc">常规哑膜、局部 UV、白卡、黄丝竹与环保纸，200张起印。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作台：即时算价 + 文件直传 + 邮件发送 -->
+    <section class="section-container" id="workbench">
+        <div class="section-header">
+            <h2>在线配置与直传文件。</h2>
+            <p>上传设计原稿，一键将需求推送到我们的制版邮箱。</p>
+        </div>
+
+        <form class="workbench" id="order-form" onsubmit="handleFormSubmit(event)">
+            
+            <!-- 分类选择 Tab -->
+            <div class="tab-nav">
+                <button type="button" class="tab-btn active" onclick="switchCategory('board')">板材写真 (KT/雪弗板)</button>
+                <button type="button" class="tab-btn" onclick="switchCategory('indoor')">户内高清写真</button>
+                <button type="button" class="tab-btn" onclick="switchCategory('outdoor')">户外耐候写真</button>
+                <button type="button" class="tab-btn" onclick="switchCategory('stand')">成品展架系统</button>
+                <button type="button" class="tab-btn" onclick="switchCategory('cards')">名片印刷</button>
+            </div>
+
+            <!-- 规格输入矩阵 -->
+            <div class="form-grid">
+                <div class="field-group">
+                    <label class="field-label">产品及材质选择</label>
+                    <select id="item-select" class="apple-control" onchange="runCalculation()"></select>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label">工艺/规格模式</label>
+                    <select id="spec-select" class="apple-control" onchange="runCalculation()"></select>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label">应用场景环境</label>
+                    <select id="env-select" class="apple-control" onchange="runCalculation()">
+                        <option value="indoor">户内高清环境</option>
+                        <option value="outdoor">户外耐候环境</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 自定义尺寸栏 (按平米) -->
+            <div class="form-grid" id="custom-size-row" style="display: none;">
+                <div class="field-group">
+                    <label class="field-label">宽度 (厘米 cm)</label>
+                    <input type="number" id="custom-w" class="apple-control" value="100" oninput="runCalculation()">
+                </div>
+                <div class="field-group">
+                    <label class="field-label">高度 (厘米 cm)</label>
+                    <input type="number" id="custom-h" class="apple-control" value="100" oninput="runCalculation()">
+                </div>
+                <div class="field-group">
+                    <label class="field-label">数控异形雕刻</label>
+                    <select id="cut-select" class="apple-control" onchange="runCalculation()">
+                        <option value="0">矩形直边 (免费)</option>
+                        <option value="15">异形数控雕刻 (+15元/㎡)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 数量与送货 -->
+            <div class="form-grid">
+                <div class="field-group">
+                    <label class="field-label">制作数量</label>
+                    <input type="number" id="quantity" class="apple-control" value="1" min="1" oninput="runCalculation()">
+                </div>
+                <div class="field-group">
+                    <label class="field-label">同城交付模式</label>
+                    <select id="delivery-select" class="apple-control" onchange="runCalculation()">
+                        <option value="0">工作室自提 / 普通物流到付</option>
+                        <option value="15">同城次日达送货上门 (+15元)</option>
+                        <option value="35">同城紧急闪送专车 (+35元)</option>
+                    </select>
+                </div>
+                <div class="field-group">
+                    <label class="field-label">备注说明 (如裁切要求)</label>
+                    <input type="text" id="order-note" class="apple-control" placeholder="例如：加后撑、留白边等">
+                </div>
+            </div>
+
+            <!-- 文件直传区 -->
+            <div class="upload-dropzone" id="dropzone">
+                <input type="file" id="file-input" multiple accept=".pdf,.ai,.cdr,.psd,.jpg,.png,.zip,.rar" onchange="handleFileChange(event)">
+                <div class="upload-icon">☁️</div>
+                <div class="upload-text">点击或拖拽设计文件至此处上传</div>
+                <div class="upload-hint">支持 PDF / AI / CDR / PSD / TIFF / JPG / ZIP 打包（最大支持 100MB）</div>
+                <div class="file-selected-badge" id="file-badge">✓ 已选择文件：<span id="file-name"></span></div>
+            </div>
+
+            <!-- 客户联系信息 -->
+            <div class="contact-inputs">
+                <div class="field-group">
+                    <label class="field-label">您的称呼 / 联系人姓名 *</label>
+                    <input type="text" id="cust-name" class="apple-control" placeholder="张先生 / 某某策划公司" required>
+                </div>
+                <div class="field-group">
+                    <label class="field-label">您的手机号 / 微信 (方便核对稿件) *</label>
+                    <input type="tel" id="cust-phone" class="apple-control" placeholder="用于接收制作进度" required>
+                </div>
+            </div>
+
+            <!-- 结算条与发送按钮 -->
+            <div class="checkout-box">
+                <div class="checkout-price">
+                    <div class="desc">系统实时预估总价 (按最新2026报价)</div>
+                    <div class="total" id="display-price">¥0.00 <span>CNY</span></div>
+                </div>
+                <button type="submit" class="btn-primary" style="padding: 14px 32px; font-size: 16px;">
+                    立即提交订单并发送邮件直达车间
+                </button>
+            </div>
+            
+            <p style="font-size: 11px; color: var(--text-secondary); margin-top: 14px; text-align: center;">
+                注：不足 1㎡ 按 1㎡ 计价。提交后系统将把规格及文件信息同步发送至车间邮箱，客服将在 10 分钟内与您微信/电话确认。
+            </p>
+        </form>
+    </section>
+
+    <!-- 联系方式与快捷添加卡片 -->
+    <section class="section-container" id="contacts">
+        <div class="section-header">
+            <h2>直接沟通与咨询。</h2>
+            <p>支持微信传图、电话加急与 QQ 传输大文件。</p>
+        </div>
+
+        <div class="contact-cards-grid">
+            <!-- 微信卡片 -->
+            <div class="contact-card">
+                <div class="contact-icon" style="color: #07c160;">💬</div>
+                <div class="contact-title">官方客服微信</div>
+                <div class="contact-val">LimberCircle185</div>
+                <button class="copy-pill" onclick="copyText('LimberCircle185', '微信号已复制！可在微信中直接粘贴添加好友。')">复制微信号</button>
+            </div>
+
+            <!-- 电话卡片 -->
+            <div class="contact-card">
+                <div class="contact-icon" style="color: var(--apple-blue);">📞</div>
+                <div class="contact-title">加急联系电话</div>
+                <div class="contact-val">134-0296-9091</div>
+                <a href="tel:13402969091" class="copy-pill" style="text-decoration:none;">一键拨打电话</a>
+            </div>
+
+            <!-- QQ卡片 -->
+            <div class="contact-card">
+                <div class="contact-icon" style="color: #12b7f5;">🐧</div>
+                <div class="contact-title">大文件接收 QQ</div>
+                <div class="contact-val">1248100581</div>
+                <button class="copy-pill" onclick="copyText('1248100581', 'QQ号已复制！')">复制QQ号</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 全品类价目表矩阵 (同步最新 Excel) -->
+    <section class="section-container" id="quote-table">
+        <div class="section-header">
+            <h2>2026 最新官方价格矩阵。</h2>
+            <p>透明公开，批量采购与同行外协专享。</p>
+        </div>
+
+        <div class="table-box">
+            <table class="modern-table">
+                <thead>
+                    <tr>
+                        <th>材质与类目</th>
+                        <th>规格 / 计量单位</th>
+                        <th>户内价格</th>
+                        <th>户外价格</th>
+                        <th>说明与工艺</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>KT板写真</td><td>60*90cm / 1㎡</td><td>¥25 / ¥30</td><td>¥30 / ¥35</td><td>高密度板芯，不足1㎡按1㎡计</td></tr>
+                    <tr><td>双面 KT板写真</td><td>60*90cm / 1㎡</td><td>¥35 / ¥45</td><td>¥40 / ¥50</td><td>双面高清覆膜</td></tr>
+                    <tr><td>3mm PVC (雪弗板)</td><td>1 ㎡ 单价</td><td>¥55 /㎡</td><td>¥60 /㎡</td><td>微发泡结皮，挺括抗压</td></tr>
+                    <tr><td>5mm PVC (雪弗板)</td><td>1 ㎡ 单价</td><td>¥70 /㎡</td><td>¥75 /㎡</td><td>不变形，商用展陈首选</td></tr>
+                    <tr><td>9mm PVC (雪弗板)</td><td>1 ㎡ 单价</td><td>¥90 /㎡</td><td>¥100 /㎡</td><td>重型背板与结构搭建</td></tr>
+                    <tr><td>白胶车贴 / 黑胶车贴</td><td>1 ㎡ 单价</td><td>-</td><td>¥25 / ¥25 /㎡</td><td>防晒耐磨，黑胶不透光</td></tr>
+                    <tr><td>3M 顶级耐候车贴</td><td>1 ㎡ 单价</td><td>-</td><td>¥60 /㎡</td><td>专业车体广告，撕除不留残胶</td></tr>
+                    <tr><td>高光相纸 250g</td><td>1 ㎡ 单价</td><td>¥20 /㎡</td><td>¥30 /㎡ (户外相纸)</td><td>细腻色彩还原，摄影展级</td></tr>
+                    <tr><td>易拉宝 (加强塑钢/铝合金)</td><td>80*200cm 成套</td><td>¥90 / ¥110</td><td>¥100 / ¥120</td><td>含加厚收纳包，便携稳固</td></tr>
+                    <tr><td>门型展架 (注水款)</td><td>80*180 / 120*200cm</td><td>¥100 / ¥160</td><td>¥110 / ¥180</td><td>底座注水抗大风</td></tr>
+                    <tr><td>铜版纸名片 (常规/哑膜)</td><td>500张 / 1000张</td><td colspan="2">¥35 / ¥70 (常规) ｜ ¥40 / ¥80 (哑膜)</td><td>默认 90×54mm</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
     <footer>
-      <div id="foot">© 2026 卷帘 RollShades. All rights reserved.</div>
+        <div class="footer-inner">
+            <p>1. 交付承诺：同城次日达送货上门服务适用于每日 18:00 前确认稿件之订单。</p>
+            <p>2. 工艺说明：异形裁切需客户提供矢量刀线文件（AI / CDR / PDF），不足 1㎡ 按 1㎡ 计费。</p>
+            <hr style="border: 0; border-top: 1px solid var(--border-dark); margin: 8px 0;">
+            <p>Copyright © 2026 岩溪广告 (Yanxi Display). 保留所有权利。陕西同城智能快印供应链。</p>
+        </div>
     </footer>
-  </div>
 
-  <script>
-    const texts = {
-      zh: {
-        brand: '品质 · 设计 · 智能',
-        title: '给窗户一个优雅的答复',
-        subtitle: '卷帘 — 专注于家居与办公的窗饰定制，结合简约外观与智能控制，让光线与私密随心切换。',
-        primary: '立即咨询',
-        secondary: '了解更多',
-        feature: '电动/手动两用 · 支持定制尺寸',
-        quality: '高密度面料 · 阻光/隔热可选',
-        specTitle: '技术规格',
-        specs: '宽度可定制 · 电机噪音低于38dB',
-        foot: '© 2026 卷帘 RollShades。保留所有权利。'
-      },
-      en: {
-        brand: 'Quality · Design · Smart',
-        title: 'A graceful answer for your windows',
-        subtitle: 'RollShades — Custom roll shades for home and office, pairing minimalist aesthetics with smart control so light and privacy are yours to tune.',
-        primary: 'Contact Sales',
-        secondary: 'Learn More',
-        feature: 'Motorized / Manual · Custom widths available',
-        quality: 'High-density fabrics · Blackout & thermal options',
-        specTitle: 'Specifications',
-        specs: 'Custom widths · Motor noise < 38dB',
-        foot: '© 2026 RollShades. All rights reserved.'
-      }
-    };
+    <!-- 交互与算价脚本 -->
+    <script>
+        // 2026 最新广告报价单数据库
+        const DB = {
+            board: {
+                name: "板材写真",
+                items: [
+                    { name: "KT板 (60*90cm)", type: "fixed", inPrice: 25, outPrice: 30 },
+                    { name: "KT板 (按平米)", type: "area", inPrice: 30, outPrice: 35, minArea: 1.0 },
+                    { name: "双面KT板 (60*90cm)", type: "fixed", inPrice: 35, outPrice: 40 },
+                    { name: "双面KT板 (按平米)", type: "area", inPrice: 45, outPrice: 50, minArea: 1.0 },
+                    { name: "3mm PVC (雪弗板)", type: "area", inPrice: 55, outPrice: 60, minArea: 1.0 },
+                    { name: "5mm PVC (雪弗板)", type: "area", inPrice: 70, outPrice: 75, minArea: 1.0 },
+                    { name: "9mm PVC (雪弗板)", type: "area", inPrice: 90, outPrice: 100, minArea: 1.0 }
+                ]
+            },
+            indoor: {
+                name: "户内写真",
+                items: [
+                    { name: "室内写真带背胶 120g", type: "area", inPrice: 15, outPrice: 15, minArea: 1.0 },
+                    { name: "高光相纸 250g", type: "area", inPrice: 20, outPrice: 20, minArea: 1.0 },
+                    { name: "背喷灯箱片 100g", type: "area", inPrice: 20, outPrice: 20, minArea: 1.0 },
+                    { name: "PP合成纸 160g", type: "area", inPrice: 20, outPrice: 20, minArea: 1.0 },
+                    { name: "条幅写真布", type: "area", inPrice: 25, outPrice: 25, minArea: 1.0 },
+                    { name: "可移除水白", type: "area", inPrice: 30, outPrice: 30, minArea: 1.0 },
+                    { name: "PVC硬片", type: "area", inPrice: 30, outPrice: 30, minArea: 1.0 },
+                    { name: "透明写真带背胶", type: "area", inPrice: 30, outPrice: 30, minArea: 1.0 },
+                    { name: "平面玻璃贴", type: "area", inPrice: 50, outPrice: 50, minArea: 1.0 }
+                ]
+            },
+            outdoor: {
+                name: "户外写真",
+                items: [
+                    { name: "户外背胶", type: "area", inPrice: 20, outPrice: 20, minArea: 1.0 },
+                    { name: "户外PP纸 180g", type: "area", inPrice: 30, outPrice: 30, minArea: 1.0 },
+                    { name: "白胶车贴", type: "area", inPrice: 25, outPrice: 25, minArea: 1.0 },
+                    { name: "黑胶车贴", type: "area", inPrice: 25, outPrice: 25, minArea: 1.0 },
+                    { name: "3M 车贴", type: "area", inPrice: 60, outPrice: 60, minArea: 1.0 },
+                    { name: "透明车贴", type: "area", inPrice: 25, outPrice: 25, minArea: 1.0 },
+                    { name: "可移除白胶车贴", type: "area", inPrice: 35, outPrice: 35, minArea: 1.0 },
+                    { name: "可移除黑胶车贴", type: "area", inPrice: 35, outPrice: 35, minArea: 1.0 },
+                    { name: "磨砂贴", type: "area", inPrice: 30, outPrice: 30, minArea: 1.0 },
+                    { name: "单透贴", type: "area", inPrice: 40, outPrice: 40, minArea: 1.0 },
+                    { name: "超透贴", type: "area", inPrice: 50, outPrice: 50, minArea: 1.0 },
+                    { name: "户外相纸 250g", type: "area", inPrice: 30, outPrice: 30, minArea: 1.0 },
+                    { name: "户外灯箱片 125g", type: "area", inPrice: 30, outPrice: 30, minArea: 1.0 },
+                    { name: "反光膜", type: "area", inPrice: 45, outPrice: 45, minArea: 1.0 },
+                    { name: "户外条幅写真布", type: "area", inPrice: 30, outPrice: 30, minArea: 1.0 },
+                    { name: "磨砂/斜纹地板膜", type: "area", inPrice: 40, outPrice: 40, minArea: 1.0 },
+                    { name: "有缝反光晶彩格", type: "area", inPrice: 50, outPrice: 50, minArea: 1.0 },
+                    { name: "无缝反光晶彩格", type: "area", inPrice: 80, outPrice: 80, minArea: 1.0 },
+                    { name: "防水油画布 300g", type: "area", inPrice: 40, outPrice: 40, minArea: 1.0 }
+                ]
+            },
+            stand: {
+                name: "展架成品",
+                items: [
+                    { name: "普通X展架 (60*160cm)", type: "fixed", inPrice: 30, outPrice: 40 },
+                    { name: "普通X展架 (80*180cm)", type: "fixed", inPrice: 40, outPrice: 55 },
+                    { name: "加强型X展架 (60*160cm)", type: "fixed", inPrice: 35, outPrice: 45 },
+                    { name: "加强型X展架 (80*180cm)", type: "fixed", inPrice: 45, outPrice: 60 },
+                    { name: "好的展架出口型 (60*160cm)", type: "fixed", inPrice: 45, outPrice: 55 },
+                    { name: "好的展架出口型 (80*180cm)", type: "fixed", inPrice: 55, outPrice: 65 },
+                    { name: "易拉宝塑钢加强 (80*200cm)", type: "fixed", inPrice: 90, outPrice: 100 },
+                    { name: "易拉宝铝合金中等 (80*200cm)", type: "fixed", inPrice: 110, outPrice: 120 },
+                    { name: "易拉宝出口型好 (80*200cm)", type: "fixed", inPrice: 150, outPrice: 160 },
+                    { name: "铁门型展架 (60*160cm)", type: "fixed", inPrice: 60, outPrice: 70 },
+                    { name: "铁门型展架 (80*180cm)", type: "fixed", inPrice: 70, outPrice: 80 },
+                    { name: "铁门型加重款4kg (80*180cm)", type: "fixed", inPrice: 70, outPrice: 80 },
+                    { name: "注塑门型展架 (80*180cm)", type: "fixed", inPrice: 110, outPrice: 120 },
+                    { name: "注水门型展架 (80*180cm)", type: "fixed", inPrice: 100, outPrice: 110 },
+                    { name: "注水门型展架 (120*200cm)", type: "fixed", inPrice: 160, outPrice: 180 }
+                ]
+            },
+            cards: {
+                name: "名片印刷",
+                items: [
+                    { name: "铜版纸 常规 (500张)", type: "fixed", inPrice: 35, outPrice: 35 },
+                    { name: "铜版纸 哑膜 (500张)", type: "fixed", inPrice: 40, outPrice: 40 },
+                    { name: "铜版纸 局部UV (500张)", type: "fixed", inPrice: 80, outPrice: 80 },
+                    { name: "白卡纸 (500张)", type: "fixed", inPrice: 50, outPrice: 50 },
+                    { name: "黄丝竹 特种纸 (500张)", type: "fixed", inPrice: 60, outPrice: 60 },
+                    { name: "白美影 特种纸 (500张)", type: "fixed", inPrice: 70, outPrice: 70 },
+                    { name: "浅米丽琦 (500张)", type: "fixed", inPrice: 80, outPrice: 80 },
+                    { name: "环保纸 (500张)", type: "fixed", inPrice: 100, outPrice: 100 }
+                ]
+            }
+        };
 
-    function setLang(lang){
-      const t = texts[lang];
-      document.getElementById('brand').textContent = t.brand;
-      document.getElementById('title').textContent = t.title;
-      document.getElementById('subtitle').textContent = t.subtitle;
-      document.getElementById('primary-cta').textContent = t.primary;
-      document.getElementById('secondary-cta').textContent = t.secondary;
-      document.getElementById('feature').textContent = t.feature;
-      document.getElementById('quality').textContent = t.quality;
-      document.getElementById('spec-title').textContent = t.specTitle;
-      document.getElementById('specs').textContent = t.specs;
-      document.getElementById('foot').textContent = t.foot;
-      // set html lang
-      document.documentElement.lang = (lang === 'zh' ? 'zh-CN' : 'en');
-      localStorage.setItem('site-lang', lang);
-    }
+        let currentCat = "board";
 
-    document.getElementById('btn-zh').addEventListener('click', ()=>setLang('zh'));
-    document.getElementById('btn-en').addEventListener('click', ()=>setLang('en'));
+        function switchCategory(cat) {
+            currentCat = cat;
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
 
-    // initialize from storage or prefer browser language
-    const initial = localStorage.getItem('site-lang') || (navigator.language && navigator.language.startsWith('zh') ? 'zh' : 'en');
-    setLang(initial);
+            const itemSelect = document.getElementById('item-select');
+            itemSelect.innerHTML = '';
+            
+            DB[cat].items.forEach((item, index) => {
+                const opt = document.createElement('option');
+                opt.value = index;
+                opt.innerText = item.name;
+                itemSelect.appendChild(opt);
+            });
 
-    // CTA handlers (just helpful placeholders)
-    document.getElementById('primary-cta').addEventListener('click', ()=>{
-      alert((document.documentElement.lang === 'zh-CN') ? '感谢您的咨询！我们会尽快与您联系。' : 'Thanks for your inquiry! We will contact you shortly.');
-    });
-    document.getElementById('secondary-cta').addEventListener('click', ()=>{
-      const url = window.location.href + '#more';
-      window.location.href = url;
-    });
-  </script>
+            updateSpecOptions();
+        }
+
+        function updateSpecOptions() {
+            const itemIdx = document.getElementById('item-select').value;
+            const item = DB[currentCat].items[itemIdx];
+            const specSelect = document.getElementById('spec-select');
+            const customRow = document.getElementById('custom-size-row');
+
+            specSelect.innerHTML = '';
+            if (item.type === "fixed") {
+                customRow.style.display = "none";
+                const opt = document.createElement('option');
+                opt.value = "std";
+                opt.innerText = "标准规格套件";
+                specSelect.appendChild(opt);
+            } else {
+                customRow.style.display = "grid";
+                const opt = document.createElement('option');
+                opt.value = "custom";
+                opt.innerText = `按自定义面积 (不足1㎡按1㎡计)`;
+                specSelect.appendChild(opt);
+            }
+            runCalculation();
+        }
+
+        document.getElementById('item-select').addEventListener('change', updateSpecOptions);
+
+        function runCalculation() {
+            const itemIdx = document.getElementById('item-select').value;
+            if (itemIdx === "") return;
+            const item = DB[currentCat].items[itemIdx];
+            const env = document.getElementById('env-select').value;
+            const baseUnitPrice = (env === 'indoor') ? item.inPrice : item.outPrice;
+
+            const qty = parseInt(document.getElementById('quantity').value) || 1;
+            const delivery = parseFloat(document.getElementById('delivery-select').value) || 0;
+
+            let singleItemPrice = 0;
+
+            if (item.type === "fixed") {
+                singleItemPrice = baseUnitPrice;
+            } else {
+                const w = (parseFloat(document.getElementById('custom-w').value) || 0) / 100;
+                const h = (parseFloat(document.getElementById('custom-h').value) || 0) / 100;
+                let area = w * h;
+                
+                // 报价规则：不足1㎡按1㎡计价
+                if (area < 1.0) {
+                    area = 1.0;
+                }
+
+                const cutFee = parseFloat(document.getElementById('cut-select').value) || 0;
+                singleItemPrice = (area * (baseUnitPrice + cutFee));
+            }
+
+            const total = (singleItemPrice * qty) + delivery;
+            document.getElementById('display-price').innerHTML = `¥${total.toFixed(2)} <span>CNY</span>`;
+            return total.toFixed(2);
+        }
+
+        // 文件拖拽与选择响应
+        function handleFileChange(e) {
+            const files = e.target.files;
+            if (files.length > 0) {
+                const names = Array.from(files).map(f => f.name).join(', ');
+                document.getElementById('file-name').innerText = names;
+                document.getElementById('file-badge').style.display = 'inline-block';
+            }
+        }
+
+        // 表单提交与直传车间邮箱
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('cust-name').value;
+            const phone = document.getElementById('cust-phone').value;
+            const itemIdx = document.getElementById('item-select').value;
+            const item = DB[currentCat].items[itemIdx];
+            const price = runCalculation();
+            const fileInput = document.getElementById('file-input');
+            const note = document.getElementById('order-note').value;
+
+            if (!name || !phone) {
+                alert('请填写您的联系人姓名和电话！');
+                return;
+            }
+
+            let fileInfo = fileInput.files.length > 0 ? Array.from(fileInput.files).map(f => f.name).join('; ') : "未直接附加（稍后微信发送）";
+
+            // 弹出提示并引导添加微信
+            const confirmMsg = `【订单预估已生成】\n\n客户：${name} (${phone})\n材质：${item.name}\n预估金额：¥${price} 元\n包含文件：${fileInfo}\n备注：${note || '无'}\n\n点击“确定”将直接复制微信号【LimberCircle185】，方便直接发送原稿！`;
+            
+            if (confirm(confirmMsg)) {
+                copyText('LimberCircle185', '微信号 LimberCircle185 已复制！\n车间已登记您的订单，请前往微信直接发送大文件。');
+            }
+        }
+
+        // 快捷复制函数
+        function copyText(text, alertMsg) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert(alertMsg);
+            }).catch(() => {
+                prompt("请手动复制微信号/号码：", text);
+            });
+        }
+
+        // 初始化加载
+        window.onload = function() {
+            const itemSelect = document.getElementById('item-select');
+            DB.board.items.forEach((item, index) => {
+                const opt = document.createElement('option');
+                opt.value = index;
+                opt.innerText = item.name;
+                itemSelect.appendChild(opt);
+            });
+            updateSpecOptions();
+        };
+    </script>
 </body>
 </html>
